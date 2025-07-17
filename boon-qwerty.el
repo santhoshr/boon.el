@@ -6,6 +6,7 @@
 
 
 (define-key boon-select-map "q"  'boon-select-outside-quotes)
+(define-key boon-select-map "'"  'boon-select-inside-quotes)
 (define-key boon-select-map "w"  'boon-select-word)
 (define-key boon-select-map "g"  'boon-select-paragraph)
 
@@ -28,26 +29,27 @@
 
 (define-key boon-moves-map "y"  '("fYnd" . xref-find-definitions))
 (define-key boon-moves-map "Y"  'xref-find-references)
-(define-key boon-moves-map "i"  'previous-line)
-(define-key boon-moves-map "o"  'next-line)
-(define-key boon-moves-map "I"  'backward-paragraph)
-(define-key boon-moves-map "O"  'forward-paragraph)
+(define-key boon-moves-map "O"  'undo)
+(define-key boon-moves-map "I"  'redo)
+(define-key boon-moves-map "i"  'backward-paragraph)
+(define-key boon-moves-map "o"  'forward-paragraph)
 (define-key boon-moves-map "u"  'boon-beginning-of-line)
 (define-key boon-moves-map "p"  'boon-end-of-line)
-(define-key boon-moves-map "j"  'boon-smarter-backward)
+(define-key boon-moves-map "j"  'next-line)
 (define-key boon-moves-map ";"  'boon-smarter-forward)
 (define-key boon-moves-map "K"  'boon-smarter-upward)
-(define-key boon-moves-map "L"  'boon-smarter-downward)
+(define-key boon-moves-map "J"  'boon-smarter-downward)
 (define-key boon-moves-map ","  'boon-beginning-of-expression)
 (define-key boon-moves-map "."  'boon-end-of-expression)
-(define-key boon-moves-map "k"  'backward-char)
+(define-key boon-moves-map "k"  'previous-line)
 (define-key boon-moves-map "l"  'forward-char)
+(define-key boon-moves-map "L"  'boon-smarter-forward)
 (define-key boon-moves-map "<"  'beginning-of-buffer)
 (define-key boon-moves-map ">"  'end-of-buffer)
-(define-key boon-moves-map "h"  '("hop" . avy-goto-word-1))
-(define-key boon-moves-map "H"  'avy-goto-char)
-
-
+(define-key boon-moves-map "T"  '("hop" . avy-goto-word-1))
+(define-key boon-moves-map "h"  'backward-char)
+(define-key boon-moves-map "H"  'boon-smarter-backward)
+(define-key boon-moves-map ":"  'avy-goto-char)
 
 ;; Special keys
 
@@ -114,6 +116,7 @@
 ;; Most of these are actually in the boon-moves-map; however some don't quite work there; so they end up here.
 (define-key boon-command-map (kbd "C-k") 'scroll-down-line)
 (define-key boon-command-map (kbd "C-l") 'scroll-up-line)
+(define-key boon-command-map (kbd "M-RET") 'recenter-top-bottom)
 
 (define-key indent-rigidly-map "k" 'indent-rigidly-right)
 (define-key indent-rigidly-map "l" 'indent-rigidly-left)
