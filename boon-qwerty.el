@@ -117,6 +117,7 @@
 (define-key boon-command-map (kbd "C-k") 'scroll-down-line)
 (define-key boon-command-map (kbd "C-l") 'scroll-up-line)
 (define-key boon-command-map (kbd "M-RET") 'recenter-top-bottom)
+(define-key boon-command-map (kbd "RET")  'boon-smarter-downward)
 
 (define-key indent-rigidly-map "k" 'indent-rigidly-right)
 (define-key indent-rigidly-map "l" 'indent-rigidly-left)
